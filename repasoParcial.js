@@ -62,3 +62,56 @@ for (let i = 0; i < 8; i++) {
 
 const otroArrayShuffle = shuffleArray(arrayOrigin)
 console.log("arrayOrigin", arrayOrigin);
+
+
+// differencia entre indice y contenido de un array
+function indiceYcontenidoArray() {
+    const arreglo = [23, 44, 65, 87, 77]
+        //     index  0   1   2   3   4
+    for (let index = 0; index < arreglo.length; index++) {
+        console.log(arreglo[index])
+        console.log(index);       
+    }
+}
+
+
+/**
+ * Realiza una funcion que verifique si todos los valores de un arreglo 
+ * se encuentran dentro de un rango especificado
+ * arreglo ==> [23, 44, 65, 87, 77]
+ * rango ==> valor1 y valor2
+ */
+
+function compruebaArray(arreglo, rangoMin, rangoMax) {
+    for (let index = 0; index < arreglo.length; index++) {
+        if (arreglo[index] < rangoMin || arreglo[index] > rangoMax)
+            return false
+    }
+    return true
+}
+
+console.log(compruebaArray([23, 44, 65, 87, 77], 11, 90))
+console.log(compruebaArray([23, 44, 65, 87, 77], 11, 50))
+
+/**
+ * Dado un arreglo con nombres de personas realice una funcion
+ * que devuelva los nombres que comienzan con un caracter dado
+ * ["Pedro", "Federico", "Pablo", "Florencia", "Federica", "Lautaro"]
+ */
+
+function nombres(arreglo, carac) {
+    const nameMatch = [];
+
+    for (let index = 0; index < arreglo.length; index++) {
+        let nombre = arreglo[index]
+        if (nombre[0] === carac) {
+            nameMatch[nameMatch.length] = nombre // nameMtch.push(nombre)
+        } 
+    }
+    return nameMatch;
+}
+
+
+const contactos = ["Pedro", "Federico", "Pablo", "Florencia", "Federica", "Lautaro"]
+console.log(nombres(contactos, 'F'))
+console.log(nombres(contactos, 'P'))
